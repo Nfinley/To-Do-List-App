@@ -2,4 +2,4 @@
 An app built with MySql, Node, Express and Handlebars that takes user input and creates a list of things to do. 
 
 ----
-_Created as homework assignment for the UT Coding Bootcamp. October 2016._
+_Created as a homework assignment for the UT Coding Bootcamp. October 2016._
