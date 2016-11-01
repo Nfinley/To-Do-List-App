@@ -1,0 +1,80 @@
+
+<div class = "container">
+<div class="row">
+
+  <div class="col-md-4 col-sm-2"></div>
+
+  <div class="col-md-4 col-sm-8">
+		 <h2>Create a Task</h2>
+		<form class="create-update-form" action="todo/create" method="POST">
+
+		  <div class="form-group">
+		    <label for="task">Enter Task:</label>
+		    <input type="text" id="task" name="name">
+		  </div>
+
+
+
+		  <button type="submit" class="btn btn-primary">Create Task</button>
+		</form>
+	</div>
+  <div class="col-md-4 col-sm-2"></div>
+
+
+</div>
+  {{!-- End of create task --}}
+
+{{!-- Start of todo and done columns --}}
+<div class="row">
+
+	{{!-- TODO column --}}
+  <div class="col-md-6 col-sm-12 columnLeft">
+	{{!-- Will display those tasks in the TODO section --}}
+	<h2> TO DO </h2>
+
+	<ul>
+	  {{#each todo}}
+	    {{#unless this.task}}
+	      <li>
+	        {{this.task_name}}
+
+	        <form action="todo/update/{{this.id}}?_method=PUT" method="POST">
+	          <input type="hidden" name="task" value="true">
+	          <button type="submit" class="btn btn-success"> Task COMPLETE</button>
+	        </form>
+	        <form action="todo/delete/{{this.id}}?_method=DELETE" method="POST">
+	          <input type="hidden" name="task" value="true">
+	          <button type="submit" class="btn btn-warning">Delete Task</button>
+	        </form>
+
+	      </li>
+	    {{/unless}}
+	  {{/each}}
+	</ul>
+
+  </div>
+
+  {{!-- Done column --}}
+  <div class="col-md-6 col-sm-12 columnRight text-center">
+
+
+{{!-- The completed section once a user clicks on the button done --}}
+<h2> Done </h2>
+
+<ul>
+  {{#each todo}}
+    {{#if this.task}}
+      <li>
+        {{this.task_name}}
+
+        <form action="todo/update/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="task" value="false">
+          <button type="submit" class="btn btn-primary">Mark as incomplete</button>
+        </form>
+      </li>
+    {{/if}}
+  {{/each}}
+</ul>
+ </div>
+ </div>
+ </div>

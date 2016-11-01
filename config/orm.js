@@ -12,8 +12,7 @@ var orm = {
     selectAll: function(tableInput) {
         return db.query("SELECT * FROM  ??", [tableInput])
             .then(function(rows) {
-                var rows = rows[0]
-                return rows;
+                return rows[0];
                 // console.log(rows[0]);
             })
             .catch(function(err) {
@@ -22,14 +21,13 @@ var orm = {
 
     },
     // This will take userinput and put it into the database
-    insertTask: function(tableInput, task) {
+    insertTask: function(tableInput, value) {
     	// FIX THESQL INJECTION ISSUE HERE ONCE IT IS WORKING
         return db.query("INSERT INTO " + tableInput + " SET ?", {
-        	task_name: task
+                task_name: value
         })
             .then(function(rows) {
-                var rows = rows[0]
-                return rows;
+                return rows[0];
                 // console.log(rows[0]);
             })
             .catch(function(err) {

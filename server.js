@@ -1,6 +1,7 @@
 /* Server.js file for the To-Do-List-App HW assignment
     Created by: Nigel Finley for the UT BOOTCAMP class
     Date of creation: October 30th, 2016
+    Purpose: This files sets up the server and the view engine
  */
 
 // ==== DEPENDENCIES ======
@@ -9,7 +10,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
-var orm = require('./config/orm.js');
+
 
 // ====== SETTING UP THE EXPRESS APP ========
 var app = express();
@@ -28,20 +29,14 @@ app.set('view engine', 'handlebars');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
+app.use('/public', express.static(__dirname + '/public/'));
 app.use(methodOverride('_method'));
 
 
 // ==== Routes using express.Router =====
-var controller = require('./controllers/controller');
+var controller = require('./controllers/todo_controller');
 app.use('/', controller);
-
-
-orm.selectAll('todoList')
-  .then(function(rows){
-    console.log(rows);
-  })
-
 
 // Starts the server to begin listening
 // =============================================================
