@@ -7,9 +7,8 @@
 var orm = require('../config/orm.js');
 
 var todo = {
-	// not sure how to make this work with a promise. the example is a callback
     selectAll: function() {
-        // This runs as soon as the server starts up and pulls all of the info from the database
+        // This runs when the user goes to the /todo page when called in the controller.js file
         return orm.selectAll('todoList')
             .then(function(rows) {
                 // console.log("in controller: ", rows);
@@ -19,8 +18,8 @@ var todo = {
 
     },
 
-    create: function(cols, value) {
-    	return orm.insertTask('todoList', cols, value)
+    create: function(value) {
+    	return orm.insertTask('todoList', value)
 			.then(function(rows) {
 		            console.log("inserted rows: ", rows);
 		            return rows;
@@ -29,6 +28,22 @@ var todo = {
 			.catch(function(err) {
                 console.log(err);
             })
+    },
+    update: function(completedVal, condition){
+    	return orm.updateTask('todoList', completedVal, condition)
+    		.then(function(rows){
+    			console.log("updated rows: ", rows);
+    			return rows;
+    		})
+
+    },
+
+    delete: function(condition){
+    	return orm.deleteTask('todoList', condition)
+    		.then(function(rows){
+    			console.log("DELETED row: ", rows);
+    			return rows;
+    		})
     }
 
 

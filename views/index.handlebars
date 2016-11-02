@@ -34,7 +34,7 @@
 
 	<ul>
 	  {{#each todo}}
-	    {{#unless this.task}}
+	    {{#unless this.completed}}
 	      <li>
 	        {{this.task_name}}
 
@@ -46,7 +46,7 @@
 	          <input type="hidden" name="task" value="true">
 	          <button type="submit" class="btn btn-warning">Delete Task</button>
 	        </form>
-
+			
 	      </li>
 	    {{/unless}}
 	  {{/each}}
@@ -55,7 +55,7 @@
   </div>
 
   {{!-- Done column --}}
-  <div class="col-md-6 col-sm-12 columnRight text-center">
+  <div class="col-md-6 col-sm-12 columnRight">
 
 
 {{!-- The completed section once a user clicks on the button done --}}
@@ -63,7 +63,7 @@
 
 <ul>
   {{#each todo}}
-    {{#if this.task}}
+    {{#if this.completed}}
       <li>
         {{this.task_name}}
 
@@ -71,6 +71,11 @@
           <input type="hidden" name="task" value="false">
           <button type="submit" class="btn btn-primary">Mark as incomplete</button>
         </form>
+
+        <form action="todo/delete/{{this.id}}?_method=DELETE" method="POST">
+	          <input type="hidden" name="task" value="true">
+	          <button type="submit" class="btn btn-warning">Delete Task</button>
+	        </form>
       </li>
     {{/if}}
   {{/each}}
