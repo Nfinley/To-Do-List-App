@@ -6,87 +6,53 @@
  	<!-- Include meta viewport tag to give browser instructions on how to control page dimensions/scaling -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Latest Bootstrap compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <!-- Bootstrap 4 compiled and minified CSS -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous"> -->
+
+    <!--====== MATERIALIZE ===== -->
+ <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">         
+
     <!-- Customized stylesheet -->
     <link rel="stylesheet" type="text/css" href="../public/assets/css/style.css">
     <!-- Google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Anton|Bungee|Fjalla+One|Orbitron|Ravi+Prakash|Russo+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Bungee|Fjalla+One|Nothing+You+Could+Do|Reenie+Beanie|Orbitron|Ravi+Prakash|Russo+One" rel="stylesheet">
+    {{!-- <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do|Reenie+Beanie" rel="stylesheet"> --}}
     <!-- Font Awesome link which enable fonts and icons.  -->
     <script src="https://use.fontawesome.com/9763ef17ba.js"></script>
 </head>
 <body>
 {{!-- Where we will insert all of the inputs --}}
-<header class = "text-center">
-	<h1> <img src="../../public/assets/img/robot.png">Welcome to List Lover </h1>
-	
-</header>
+<div class="container center-align">
+<div class = "row">
+	<div class ="col s12">
+		<h3> <img src="../../public/assets/img/robot.png">Welcome to List Lover </h3>
+	</div>
+</div>
+</div>
 	{{{body}}}
 
 
-
 	<!-- jQuery library (necessary for Bootstrap & other JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js "></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js "></script> -->
 
     <!-- Latest compiled and minified Bootstrap JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js " integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa " crossorigin="anonymous "></script>
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js " integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa " crossorigin="anonymous "></script> -->
 
-    <script type="text/javascript ">
-    // function setError(){
-    // alert("Please complete fields");
+ <!--====== MATERIALIZE ===== -->
+ <!-- Materialize Jquery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<!-- Compiled and minified JavaScrip for Materialize -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 
 
- 
-    // $('#addBtn').on('click', function() {
-    // 	// var name = $('#userName');
-    // 	// var photo = $('#photoID');
-    // 	// if((name =="") || (photo == "")){
-    //  //    setError();
-   	// 	// }
+	<!-- jQuery library (necessary for Bootstrap & other JavaScript plugins) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
 
-    //     // initializes an intial array to store the selected scores
-    //     var answersArray = [];
-    //     var scoreSum = 0;
-    //     // create a jquery .each function to create an array of the scres
-    //     $('.questions').each(function(index, value) {
-    //         var selection = $(this).val();
-    //         scoreSum = scoreSum + parseInt(selection);
-
-    //         // pushing each selection to the array
-    //         answersArray.push(selection);
-    //     });
-    //     // return scoreSum;
-    //     console.log("Here is the the total score of the user input: ", scoreSum);
-
-    //     // console.log("answersArray", answersArray);
-    //     var newUser = {
-    //         name: $('#userName').val().trim(),
-    //         photo: $('#photoID').val().trim(),
-    //         scores: answersArray,
-    //         scoreSum: scoreSum
-
-    //     };
-    //     // console.log("Newuser: ", newUser);
-    //     var currentURL = window.location.origin;
-
-    //     // This takes the html input and sends it to the app.post route
-    //     $.post(currentURL + '/survey', newUser)
-    //         .done(function(data) {
-    //             $('input').val(" ");
-    //             $('select').val(" ");
-    //             // alert("TEST ");
-    //             console.log("data: " + JSON.stringify(data.photo));
-    //             // alert("Thanks for taking the survey")
-    //             var image = $('<img src="' + data.photo + '" width="100%" height="auto" alt="match-person">');
-    //             $('#insertPhoto').append(image);
-    //             $('#matchName').append("Hi I am: " + data.name);
-    //             // $('#insertPhoto').backstretch(data.photo);
-    //             $('#personModal').modal('show');
-
-    //         });
-
-    //     return false;
-    // });
-    // </script>
+       <!-- Bootstrap 4 Latest compiled and minified Bootstrap JavaScript -->
+	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script> -->
 
 </body>
 </html>

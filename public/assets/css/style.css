@@ -1,7 +1,8 @@
 body {
-  padding: 50px;
+  padding: 20px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #ccc;
+
 }
 
 a {
@@ -13,3 +14,46 @@ img {
 	width: 100px;
 
 }
+li {
+	font-size: 20px;
+	padding: 10px;
+}
+
+.container {
+	width: 90%;
+}
+
+.writing {
+	font-family: 'Reenie Beanie', cursive;
+	/*font-family: 'Nothing You Could Do', cursive;*/
+	font-size: 35px;
+}
+
+
+
+#task {
+	font-size: 40px;
+}
+
+label { 
+	font-size: 1.5em;
+ }
+
+.card-panel{
+	/*padding: 10px;*/
+	width: 50%;
+	margin: 15px;
+	padding-bottom: 40px;
+}
+button {
+	margin-top: 10px;
+
+}
+/*.complete_float {
+	clear:both;
+}
+
+.trash_float {
+	clear:both;
+}*/
+
